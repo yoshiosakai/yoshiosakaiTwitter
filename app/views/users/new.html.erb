@@ -1,0 +1,14 @@
+<p><%= link_to('home','http://localhost:3000/tweets/new') %></p>
+<h1>会員登録</h1>
+
+<p><%= form_for User.new do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br><br>
+  <%= f.label :username %>
+  <%= f.text_field :username %><br><br>
+  <%= f.label :location %>
+  <%= f.text_field :location %><br><br>
+  <%= f.label :about %>
+  <%= f.text_area :about %><br><br>
+  <%= f.submit %>
+<% end %></p>
