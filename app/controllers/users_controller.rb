@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   def index
     @user= User.all
-@user = Hash.new
-@user[:username] = 'よしお'
   end
 
   def show
@@ -11,6 +9,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new
+      @user.email = params[:user][:email]
     @user.name = params[:user][:name]
     @user.username = params[:user][:username]
     @user.location = params[:user][:location]

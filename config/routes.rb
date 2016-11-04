@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 
   resources :tweets
 
-
   root 'tweets#index'
 
   get 'tweets/index'
@@ -22,6 +21,7 @@ Rails.application.routes.draw do
   get 'users/index/:username'=>'users#index'
 
   get 'users/show/:username'=>'users#show'
+
 
   post "users" => "users#create"
 
