@@ -1,4 +1,6 @@
-<h1><%= @user[:username] %></h1>
+<h1>id:<%= @user[:id] %><br>
+  <%= image_tag 'dove.jpg',:size => "300x200"%><br>
+<%= @user[:username] %></h1>
 <p><%= @user[:name] %></p>
 <ul>
   <li>Location : <%= @user[:location] %></li>
@@ -6,3 +8,11 @@
   <li>email    : <%= @user[:email] %></li>
   <li>created_at    : <%= @user[:created_at] %></li>
 </ul>
+
+<p>タイムライン</p>
+<% @tweets.reverse_each do |tweet| %>
+  <h1><%= tweet.title %></h1>
+    <%= tweet.content %>
+    <%= link_to "[delete]",tweet_path(tweet.id),method: :delete,
+    data: {confirm: "are you sure?"}%>
+<% end %>

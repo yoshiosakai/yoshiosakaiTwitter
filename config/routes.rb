@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :tweets
 
+  resources :users, except:[:destroy,:update,:edit,:show]
+
   root 'tweets#index'
 
   get 'tweets/index'
@@ -14,14 +16,11 @@ Rails.application.routes.draw do
 
   post "tweets" => "tweets#create"
 
-  get 'users/index'
+  get 'users/index' #=> 'users#index'
 
   get 'users/new'
 
-  get 'users/index/:username'=>'users#index'
-
-  get 'users/show/:username'=>'users#show'
-
+  get 'users/show/:id' => 'users#show'
 
   post "users" => "users#create"
 

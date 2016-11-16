@@ -1,9 +1,9 @@
-<p><%= link_to('home','http://localhost:3000/tweets/new') %></p>
+<p><%= link_to('home',tweets_new_path) %></p>
 <h1>ユーザ一覧</h1>
 <p>
 <% @user.each do |user| %>
-username : <%= link_to(user.username,'http://localhost:3000/users/show/よしお') %><br>
-name : <%= user.name %>,<br>
+username : <%= link_to(user.username,"http://localhost:3000/users/show/1") %><br>
+name : <%= user.name %>,<br>ra
 location : <%= user.location %>,<br>
 about : <%= user.about %><br><br>
 <% end %>
