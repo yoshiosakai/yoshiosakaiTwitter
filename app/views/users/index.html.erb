@@ -2,8 +2,13 @@
 <h1>ユーザ一覧</h1>
 <p>
 <% @user.each do |user| %>
+<<<<<<< HEAD
 username : <%= link_to(user.username,"http://localhost:3000/users/show/1") %><br>
 name : <%= user.name %>,<br>ra
+=======
+username : <%= link_to(user.username,'http://localhost:3000/users/show/ヨシオ') %><br>
+name : <%= user.name %>,<br>
+>>>>>>> parent of 0b351f0... 2nd commit
 location : <%= user.location %>,<br>
 about : <%= user.about %><br><br>
 <% end %>
